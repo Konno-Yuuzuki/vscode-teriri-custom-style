@@ -54,8 +54,8 @@
   }
 }
 /* 鼠标悬停在代码上的提示框 */
-.monaco-hover:not(.hidden) {
-  /* padding: 1em 2em !important; */
+/* .monaco-hover:not(.hidden) {
+  padding: 1em 2em !important;
   font-family: "CaskaydiaCove Nerd Font", "DFGirl", "LXGW WenKai GB Screen" !important;
   border: 1px solid rgb(36, 40, 48) !important;
   box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
@@ -63,10 +63,10 @@
   background-color: rgba(40, 44, 52, 0.2) !important;
   backdrop-filter: blur(8px) brightness(120%);
   outline: none !important;
-}
+} */
 
 /* 代码提示框行的提示框 */
-.overflowingOverlayWidgets {
+/* .overflowingOverlayWidgets {
   .suggest-details {
     padding: 0.2rem 0.4rem !important;
     border-radius: 12px !important;
@@ -76,4 +76,4 @@
     backdrop-filter: blur(12px) brightness(120%);
     
   }
-}
+} */
