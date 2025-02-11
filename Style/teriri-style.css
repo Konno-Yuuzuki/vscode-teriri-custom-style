@@ -56,7 +56,7 @@
 /* 鼠标悬停在代码上的提示框 */
 .monaco-hover:not(.hidden) {
   padding: 1em 2em !important;
-  font-family: "Jetbrains mono", "霞鹜文楷等宽", monospace;
+  font-family: "CaskaydiaCove Nerd Font", "DFGirl", "LXGW WenKai GB Screen" !important;
   border: 1px solid rgb(36, 40, 48) !important;
   box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
   border-radius: 12px !important;
