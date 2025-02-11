@@ -55,7 +55,7 @@
 }
 /* 鼠标悬停在代码上的提示框 */
 .monaco-hover:not(.hidden) {
-  padding: 1em 2em !important;
+  /* padding: 1em 2em !important; */
   font-family: "CaskaydiaCove Nerd Font", "DFGirl", "LXGW WenKai GB Screen" !important;
   border: 1px solid rgb(36, 40, 48) !important;
   box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
@@ -74,5 +74,6 @@
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
     background-color: transparent !important;
     backdrop-filter: blur(12px) brightness(120%);
+    
   }
 }
