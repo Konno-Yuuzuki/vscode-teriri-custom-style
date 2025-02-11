@@ -163,7 +163,7 @@
 /* 关键字高亮 */
 span.mtk8 {
   --font-color-0: #bbbbbb;
-  --font-color-1: #fede5d;
+  --font-color-1: #FFC6DE;
   text-shadow: 0 0 4px var(--font-color-1);
   animation: fadeLightIn 0.5s ease-in forwards;
 }
