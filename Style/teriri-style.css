@@ -14,7 +14,7 @@
 .centext-view {
   background-color: transparent !important;
   border-radius: 6px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px 2px var(--vscode-widget-shadow);
   backdrop-filter: blur(20px) brightness(120%)
 }
 
@@ -23,7 +23,8 @@
   border-radius: 4px !important;
   background-color: rgba(40, 44, 52, 0.2) !important;
   backdrop-filter: blur(8px) brightness(120%);
-  box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
+  /* box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important; */
+  box-shadow: 0 0 8px 2px var(--vscode-widget-shadow) !important;
 }
 
 /* 通知 */
@@ -42,7 +43,7 @@
     /* border-top-left-radius: 18px; */
     /* border-top-right-radius: 18px; */
     border: none;
-    box-shadow: 0 -2px 4px 1px #FFC6DE50 !important
+    box-shadow: 0 -2px 4px 1px var(--vscode-widget-shadow) !important
   }
 }
 
@@ -51,7 +52,8 @@
   .editor-widget.suggest-widget {
     /* padding: 0.2rem 0.4rem !important; */
     border-radius: 4px !important;
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
+    /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important; */
+    box-shadow: 0 0 4px 1px var(--vscode-widget-shadow) !important;
     background-color: transparent !important;
     backdrop-filter: blur(12px) brightness(120%);
   }
@@ -61,7 +63,8 @@
   /* padding: 1em 2em !important; */
   font-family: "CaskaydiaCove Nerd Font", "DFGirl", "LXGW WenKai GB Screen" !important;
   border: 1px solid rgb(36, 40, 48) !important;
-  box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
+  /* box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important; */
+  box-shadow: 0 0 8px 2px var(--vscode-widget-shadow) !important;
   border-radius: 4px !important;
   background-color: rgba(40, 44, 52, 0.2) !important;
   backdrop-filter: blur(8px) brightness(120%);
@@ -74,7 +77,8 @@
     /* padding: 0.2rem 0.4rem !important; */
     border-radius: 4px !important;
     outline: none !important;
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
+    /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important; */
+    box-shadow: 0 0 4px 1px var(--vscode-widget-shadow) !important;
     background-color: transparent !important;
     backdrop-filter: blur(12px) brightness(120%);    
   }
