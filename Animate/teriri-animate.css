@@ -244,13 +244,11 @@ div.monaco-editor .find-widget {
     z-index: -1;
 }
 
-.shadow-root-host {
+div.shadow-root-host::class('monaco-scrollable-element') {
     background-color: transparent !important;
-
-    .monaco-scrollable-element {
-        background-color: transparent !important;
-    }
+    backdrop-filter: blur(20px) brightness(120%);
 }
+
 .shadow-root-host::after {
     content: '';
     position: absolute;

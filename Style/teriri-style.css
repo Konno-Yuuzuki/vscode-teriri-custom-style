@@ -105,7 +105,7 @@
 /* 代码提示框行的提示框 */
 .overflowingOverlayWidgets {
     .suggest-details {
-        /* padding: 0.2rem 0.4rem !important; */
+        padding: 0.2rem 0.4rem !important;
         border-radius: 12px !important;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
         background-color: transparent !important;
