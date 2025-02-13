@@ -11,7 +11,7 @@
 .title.tabs.show-file-icons,
 .tabs-and-actions-container,
 .monaco-scrollable-element,
-.centext-view {
+.context-view {
     background-color: transparent !important;
     border-radius: 8px;
     /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1); */
