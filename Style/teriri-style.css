@@ -73,9 +73,11 @@
         border-radius: 4px !important;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
         outline: none !important;
+        background-color: transparent !important;
+        backdrop-filter: blur(12px) brightness(120%);
     }
 
-    .editor-widget.suggest-widget::after {
+    /* .editor-widget.suggest-widget::after {
         content: '';
         position: absolute;
         left: 0;
@@ -86,7 +88,7 @@
         background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
         z-index: -1;
-    }
+    } */
 }
 /* 鼠标悬停在代码上的提示框 */
 .monaco-hover:not(.hidden) {
@@ -105,13 +107,13 @@
     .suggest-details {
         /* padding: 0.2rem 0.4rem !important; */
         border-radius: 12px !important;
-        /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important; */
-        /* background-color: transparent !important; */
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
+        background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
         outline: none !important;
     }
 
-    .suggest-details::after {
+    /* .suggest-details::after {
         content: '';
         position: absolute;
         left: 0;
@@ -122,5 +124,5 @@
         background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
         z-index: -1;
-    }
+    } */
 }

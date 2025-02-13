@@ -246,6 +246,10 @@ div.monaco-editor .find-widget {
 
 .shadow-root-host {
     background-color: transparent !important;
+
+    .monaco-scrollable-element {
+        background-color: transparent !important;
+    }
 }
 .shadow-root-host::after {
     content: '';
