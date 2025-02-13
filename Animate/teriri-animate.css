@@ -245,6 +245,15 @@ div.monaco-editor .find-widget {
 }
 
 /* 右键菜单-编辑器 */
+:host-context(.shadow-root-host) {
+    .monaco-menu-container {
+        background-color: transparent !important;
+        backdrop-filter: blur(20px) brightness(120%);
+        border-radius: 6px;
+        animation: 300ms ease forwards !important;
+    }
+}
+
 div.shadow-root-host::shadow .monaco-menu-container::after {
     content: '';
     position: absolute;
