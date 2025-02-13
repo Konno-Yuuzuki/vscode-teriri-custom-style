@@ -70,7 +70,7 @@
     /* 代码提示框 */
     .editor-widget.suggest-widget {
         /* padding: 0.2rem 0.4rem !important; */
-        padding: 8px;
+        /* padding: 8px; */
         border-radius: 4px !important;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
         outline: none !important;
@@ -107,7 +107,7 @@
 .overflowingOverlayWidgets {
     .suggest-details {
         /* padding: 0.2rem 0.4rem !important; */
-        padding: 8px !important;
+        /* padding: 8px !important; */
         border-radius: 4px !important;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
         background-color: transparent !important;
