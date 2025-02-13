@@ -17,7 +17,7 @@
     /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1); */
 }
 
-.monaco-submenu::before {
+/* .monaco-submenu::before {
     content: '';
     position: absolute;
     left: 0;
@@ -26,7 +26,7 @@
     bottom: 0;
     background-color: transparent !important;
     backdrop-filter: blur(8px) brightness(120%);
-}
+} */
 
 /* 鼠标悬停到某些标签上的提示 */
 .context-view.monaco-component {
