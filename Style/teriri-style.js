@@ -1,9 +1,15 @@
 window.onload = () => {
-    const el = document.querySelector('.shadow-root-host')
-    const shadowRoot = el.shadowRoot
+    const editorContainer = document.querySelector('.editor-container')
+    console.log('editorContainer', editorContainer)
+    const contextMenuListener = editorContainer.addEventListener(
+        'contextmenu',
+        function (event) {
+            console.log('contextMenuListener')
+            const el = document.querySelector('.shadow-root-host')
+            const shadowRoot = el.shadowRoot
 
-    const style = document.createElement('style')
-    style.textContent = `
+            const style = document.createElement('style')
+            style.textContent = `
     .context-view.monaco-menu-container::before {
         content: "";
         position: absolute;
@@ -20,5 +26,8 @@ window.onload = () => {
         background-color: transparent !important;
     }
     `
-    shadowRoot.appendChild(style)
+            shadowRoot.appendChild(style)
+            removeEventListener('contextmenu', contextMenuListener)
+        },
+    )
 }
