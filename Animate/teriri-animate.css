@@ -241,6 +241,7 @@ div.monaco-editor .find-widget {
     backdrop-filter: blur(20px) brightness(120%);
     border-radius: 6px;
     animation: 300ms ease forwards !important;
+    z-index: -1;
 }
 
 @keyframes rightClickMenuFadeBigIn {
