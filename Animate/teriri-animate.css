@@ -321,12 +321,12 @@ div.sticky-widget {
 } */
 
 /* 鼠标悬停某些标签上的文字提示 */
-.context-view.monaco-component.top.left[style*="left"],
+/* .context-view.monaco-component.top.left[style*="left"],
 .context-view.monaco-component.top.left[style*="top"] {
-  /* transition-property: left top;
+  transition-property: left top;
   transition-duration: 200ms;
-  transition-timing-function: ease; */
-}
+  transition-timing-function: ease;
+} */
 
 .context-view.monaco-component.bottom.left[style*="left"],
 .context-view.monaco-component.bottom.left[style*="top"] {
@@ -355,9 +355,9 @@ div.monaco-split-view2.vertical.separator-border {
   --separator-border: #495495;
 }
 
-div.cursor.monaco-mouse-cursor-text {
+/* div.cursor.monaco-mouse-cursor-text {
   width: 3px !important;
-}
+} */
 
 /* 炫酷光标 */
 div.cursor {
