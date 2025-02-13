@@ -229,6 +229,7 @@ div.monaco-editor .find-widget {
 }
 
 /* 右键菜单-活动栏 */
+
 .monaco-menu-container::after {
     content: '';
     position: absolute;

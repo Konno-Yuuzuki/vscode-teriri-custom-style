@@ -31,10 +31,20 @@
 /* 鼠标悬停到某些标签上的提示 */
 .context-view.monaco-component {
     border-radius: 4px !important;
-    background-color: rgba(40, 44, 52, 0.2) !important;
-    backdrop-filter: blur(8px) brightness(120%);
     box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
     outline: none !important;
+}
+.context-view.monaco-component::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    background-color: rgba(40, 44, 52, 0.2) !important;
+    backdrop-filter: blur(8px) brightness(120%);
+    z-index: -1;
 }
 
 /* 通知 */
@@ -62,9 +72,19 @@
         /* padding: 0.2rem 0.4rem !important; */
         border-radius: 4px !important;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
+        outline: none !important;
+    }
+
+    .editor-widget.suggest-widget::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
         background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
-        outline: none !important;
     }
 }
 /* 鼠标悬停在代码上的提示框 */
@@ -84,9 +104,21 @@
     .suggest-details {
         /* padding: 0.2rem 0.4rem !important; */
         border-radius: 12px !important;
-        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
-        background-color: transparent !important;
+        /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important; */
+        /* background-color: transparent !important; */
         backdrop-filter: blur(12px) brightness(120%);
         outline: none !important;
+    }
+
+    .suggest-details::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        background-color: transparent !important;
+        backdrop-filter: blur(12px) brightness(120%);
     }
 }
