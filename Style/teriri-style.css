@@ -85,6 +85,7 @@
         display: block;
         background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
+        z-index: -1;
     }
 }
 /* 鼠标悬停在代码上的提示框 */
@@ -120,5 +121,6 @@
         display: block;
         background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
+        z-index: -1;
     }
 }
