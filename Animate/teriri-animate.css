@@ -311,10 +311,6 @@ div.sticky-widget {
     .editor-widget.suggest-widget {
         transition: top 100ms ease, left 300ms ease, top 300ms, height 300ms;
         animation: fadeBigIn 100ms ease;
-
-        .content {
-            padding-left: 8px;
-        }
     }
 
     /* 鼠标悬停在代码上的提示框 */
@@ -330,6 +326,9 @@ div.sticky-widget {
     /* 代码提示框行的提示框 */
     .suggest-details {
         animation: fadeBigIn 100ms ease;
+    }
+    .contents {
+        padding-left: 8px;
     }
 }
 
