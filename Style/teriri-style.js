@@ -35,6 +35,12 @@
         .monaco-scrollable-element {
             background-color: transparent !important;
         }
+
+
+        li.action-item.disabled {
+            display: none !important;
+        }
+
         `
         shadowRoot.appendChild(style)
     }

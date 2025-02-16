@@ -134,5 +134,5 @@
 
 /* 隐藏列表中的分割线 */
 li.action-item.disabled {
-    display: none;
+    display: none !important;
 }
