@@ -72,7 +72,8 @@
         /* padding: 0.2rem 0.4rem !important; */
         /* padding: 8px; */
         /* border-radius: 4px !important; */
-        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
+        /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important; */
+        box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
         outline: none !important;
         background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
@@ -98,7 +99,8 @@
     border: 1px solid rgb(36, 40, 48) !important;
     box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
     /* border-radius: 4px !important; */
-    background-color: rgba(40, 44, 52, 0.2) !important;
+    /* background-color: rgba(40, 44, 52, 0.2) !important; */
+    box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
     backdrop-filter: blur(8px) brightness(120%);
     outline: none !important;
 }
@@ -109,7 +111,8 @@
         /* padding: 0.2rem 0.4rem !important; */
         /* padding: 8px !important; */
         /* border-radius: 4px !important; */
-        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
+        /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important; */
+        box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
         background-color: transparent !important;
         backdrop-filter: blur(12px) brightness(120%);
         outline: none !important;
@@ -127,4 +130,9 @@
         backdrop-filter: blur(12px) brightness(120%);
         z-index: -1;
     } */
+}
+
+/* 隐藏列表中的分割线 */
+li.action-item.disabled {
+    display: none;
 }

@@ -244,29 +244,6 @@ div.monaco-editor .find-widget {
     z-index: -1;
 }
 
-/* 右键菜单-编辑器 */
-:host-context(.monaco-menu-container) {
-    background-color: transparent !important;
-    backdrop-filter: blur(20px) brightness(120%);
-    border-radius: 6px;
-    animation: 300ms ease forwards !important;
-}
-
-.shadow-root-host .monaco-menu-container {
-    /* content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: block; */
-    background-color: transparent !important;
-    backdrop-filter: blur(20px) brightness(120%);
-    border-radius: 6px;
-    animation: 300ms ease forwards !important;
-    /* z-index: -1; */
-}
-
 @keyframes rightClickMenuFadeBigIn {
     0% {
         opacity: 0;
