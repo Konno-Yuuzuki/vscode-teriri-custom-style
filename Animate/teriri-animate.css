@@ -10,20 +10,40 @@
     opacity: 0;
     transform: scale(90%);
   }
+
   40% {
     opacity: 1;
     transform: scale(101%);
   }
+
   100% {
     opacity: 1;
     transform: scale(100%);
   }
 }
+
 /* 主进程窗口全局字体 (中文状态) */
 .windows:lang(zh-Hans) {
-  font-family: "HarmonyOS Sans NaskhArabic UI", "HarmonyOS Sans SC", monospace;
+  /* font-family: "HarmonyOS Sans NaskhArabic UI", "HarmonyOS Sans SC", monospace; */
   font-weight: 500;
 }
+
+/* 输出栏字体 */
+.monaco-action-bar .action-label {
+  font-size: 15px;
+}
+
+/* 侧边栏一级标题字体 */
+.monaco-workbench .part>.title>.title-label h2 {
+  font-size: 15px;
+}
+
+/* 侧边栏侧边栏二级标题字体 */
+.monaco-pane-view .pane>.pane-header h3.title {
+  font-size: 13px;
+}
+
+/* 侧边栏侧边栏三级标题字体（默认11刚好） */
 
 /* 全局字体渐变 */
 /* span {
@@ -41,12 +61,13 @@
 }
 
 /* 鼠标悬停标签栏 */
-.tabs-container > .tab:hover {
+.tabs-container>.tab:hover {
   --font-color0: var(--vscode-tab-inactiveForeground);
   --font-color1: #fff;
   animation: fadeLightIn 150ms forwards;
 }
-.tabs-container > .tab.active {
+
+.tabs-container>.tab.active {
   border-bottom: 1px solid var(--tab-border-bottom-color);
   animation: tab-active-animate 300ms forwards;
 }
@@ -58,9 +79,11 @@
     text-shadow: 0 0 0 var(--vscode-tab-inactiveForeground);
     box-shadow: 0 0 0 var(--tab-border-bottom-color);
   }
+
   40% {
     scale: 1.05;
   }
+
   100% {
     scale: 1;
     color: var(--vscode-tab-activeForeground);
@@ -79,17 +102,19 @@
     opacity: 0;
     transform: translateX(-50%);
   }
+
   40% {
     opacity: 1;
     transform: translateX(1%);
   }
+
   100% {
     transform: translateX(0%);
   }
 }
 
 /* 拓展插件，侧边栏 */
-.extensions-list > .monaco-list > .monaco-scrollable-element {
+.extensions-list>.monaco-list>.monaco-scrollable-element {
   .monaco-list-row {
     transition: scale 300ms, width 200ms;
   }
@@ -98,12 +123,13 @@
 /* 文件侧边栏 */
 /* 需要实现两个类：
     .selected
-    .focused 
+    .focused
 */
-.explorer-folders-view > .monaco-list > .monaco-scrollable-element {
+.explorer-folders-view>.monaco-list>.monaco-scrollable-element {
   .monaco-list-rows[style*="height"] {
     transition: height 100ms ease-out;
   }
+
   .monaco-list-row {
     animation: fileTopInAnimate 0.2s ease;
   }
@@ -114,6 +140,7 @@
 
   .monaco-list-row.selected {
     scale: 1.02;
+
     span.monaco-icon-name-container::after {
       content: "🔍";
       margin-left: 1em;
@@ -130,6 +157,7 @@
       animation: fileSelectedhandRightInAnimate 0.3s ease;
     }
   }
+
   /* 清除全局样式 */
   .monaco-list-row.focused {
     scale: 1 !important;
@@ -143,10 +171,12 @@
     opacity: 0;
     transform: translateX(50%);
   }
+
   40% {
     opacity: 1;
     transform: translateX(2%);
   }
+
   100% {
     transform: translateX(0%);
   }
@@ -158,10 +188,12 @@
     opacity: 0;
     transform: translateY(-100%);
   }
+
   40% {
     opacity: 1;
     transform: translateY(50%);
   }
+
   100% {
     transform: translateY(0%);
   }
@@ -248,8 +280,10 @@ div.monaco-editor .find-widget {
 /* 菜单容器 */
 .monaco-menu-container {
   background-color: transparent !important;
+  /* div.menubar-menu-items-holder.monaco-menu-container {
+  background-color: rgba(7, 82, 233, 0.336) !important; */
   backdrop-filter: blur(20px) brightness(120%);
-  border-radius: 12px;
+  /* border-radius: 12px; */
   animation: 300ms ease forwards !important;
 }
 
@@ -258,10 +292,12 @@ div.monaco-editor .find-widget {
     opacity: 0;
     scale: 0.9;
   }
+
   40% {
     opacity: 0.8;
     scale: 1.02;
   }
+
   100% {
     scale: 1;
   }
@@ -294,6 +330,7 @@ div.sticky-widget {
 
 
 .overflowingContentWidgets {
+
   /* 代码提示框 */
   .editor-widget.suggest-widget {
     transition:
@@ -302,18 +339,21 @@ div.sticky-widget {
       top 300ms, height 300ms;
     animation: fadeBigIn 100ms ease;
   }
+
   /* 鼠标悬停在代码上的提示框 */
   .monaco-hover:not(.hidden) {
     animation: fadeBigIn 0.1s ease;
-    max-height: 500px !important;
-    overflow-y: auto !important;
+    /* max-height: 500px !important; */
+    /* overflow-y: auto !important; */
   }
+
   div[widgetid="editor.contrib.resizableContentHoverWidget"] {
     transition: top 200ms ease, left 300ms ease;
   }
 }
 
 .overflowingOverlayWidgets {
+
   /* 代码提示框行的提示框 */
   .suggest-details {
     animation: fadeBigIn 100ms ease;
@@ -325,10 +365,12 @@ div.sticky-widget {
     opacity: 0;
     transform: translateY(-10%);
   }
+
   40% {
     opacity: 1;
     transform: translateY(5%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0%);
@@ -359,10 +401,9 @@ div.sticky-widget {
 
 /* 底栏 */
 footer.part.statusbar
-
 /* 侧边栏 */
 /* div.split-view-view.visible .part.activitybar.left {
-  
+
 } */
 
 /* Code 左侧边线 */
@@ -385,20 +426,19 @@ div.cursor {
 
   /* 🌈🌈🌈 炫酷的彩虹光效！🌈🌈🌈 */
   /* 使用方法：注掉上面那个，用下面这个就行。 */
-  background: linear-gradient(
-    #ff0000,
-    #ff7f00,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0000ff,
-    #8b00ff
-  );
+  background: linear-gradient(#ff0000,
+      #ff7f00,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #8b00ff);
 
   background-size: 100% 1000%;
   border-radius: 2px;
   overflow: visible !important;
 }
+
 div.cursor::after {
   content: "";
   position: absolute;
@@ -413,22 +453,28 @@ div.cursor::after {
   filter: blur(4px) brightness(200%);
   z-index: -1;
 }
+
 @keyframes bp-animation {
   0% {
     background-position: 0 0;
   }
+
   20% {
     background-position: 0 200%;
   }
+
   40% {
     background-position: 0 400%;
   }
+
   60% {
     background-position: 0 600%;
   }
+
   80% {
     background-position: 0 800%;
   }
+
   100% {
     background-position: 0 1000%;
   }
@@ -440,6 +486,7 @@ div.cursor::after {
     color: var(--font-color-0);
     text-shadow: 0 0 0 var(--font-color-0);
   }
+
   100% {
     color: var(--font-color-1);
     text-shadow: 0 0 20px var(--font-color-1);
@@ -453,9 +500,11 @@ div.cursor::after {
     color: var(--font-color-0);
     text-shadow: 0 0 0 var(--font-color-0);
   }
+
   40% {
     scale: 1.1;
   }
+
   100% {
     scale: 1;
     color: var(--font-color-1);
@@ -468,6 +517,7 @@ div.cursor::after {
   0% {
     text-shadow: 0 0 20px #fff;
   }
+
   100% {
     text-shadow: 0 0 0;
   }
@@ -477,6 +527,7 @@ div.cursor::after {
   0% {
     transform: translateY(-200px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -487,10 +538,12 @@ div.cursor::after {
     opacity: 0;
     transform: scale(90%);
   }
+
   40% {
     opacity: 1;
     transform: scale(105%);
   }
+
   100% {
     opacity: 1;
     transform: scale(100%);
@@ -502,10 +555,12 @@ div.cursor::after {
     opacity: 0;
     scale: 0.9;
   }
+
   40% {
     opacity: 1;
     scale: 1.05;
   }
+
   100% {
     opacity: 1;
     scale: 1;

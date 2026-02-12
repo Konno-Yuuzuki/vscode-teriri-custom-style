@@ -13,13 +13,14 @@
 .monaco-scrollable-element,
 .centext-view {
   background-color: transparent !important;
-  border-radius: 8px;
+  /* border-radius: 8px; */
+  border-radius: 2px;
   /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1); */
 }
 
 /* 鼠标悬停到某些标签上的提示 */
 .context-view.monaco-component {
-  border-radius: 12px !important;
+  /* border-radius: 12px !important; */
   background-color: rgba(40, 44, 52, 0.2) !important;
   backdrop-filter: blur(8px) brightness(120%);
   box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
@@ -29,6 +30,7 @@
 .notifications-center.visible {
   background-color: transparent !important;
   backdrop-filter: blur(20px) brightness(110%);
+
   div {
     /* 为通知内部容器添加透明支持 */
     background-color: transparent !important;
@@ -36,18 +38,20 @@
 }
 
 /* 为分割页面容器添加透明支持 */
-.part.panel.basepanel.bottom.pane-composite-part {
+/* .part.panel.basepanel.bottom.pane-composite-part {
   .composite.title.has-composite-bar {
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
   }
-}
+} */
 
 .overflowingContentWidgets {
+
   /* 代码提示框 */
   .editor-widget.suggest-widget {
     padding: 0.2rem 0.4rem !important;
-    border-radius: 12px !important;
+    /* border-radius: 12px !important; */
+    border-radius: 2px !important;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
     background-color: transparent !important;
     backdrop-filter: blur(12px) brightness(120%);
@@ -56,11 +60,11 @@
 
 /* 鼠标悬停在代码上的提示框 */
 .monaco-hover:not(.hidden) {
-  padding: 1em 2em !important;
-  font-family: "Jetbrains mono", "霞鹜文楷等宽", monospace;
+  /* padding: 1em 2em !important; */
+  /* font-family: "Jetbrains mono", "霞鹜文楷等宽", monospace; */
   border: 1px solid rgb(36, 40, 48) !important;
   box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
-  border-radius: 12px !important;
+  /* border-radius: 12px !important; */
   background-color: rgba(40, 44, 52, 0.2) !important;
   backdrop-filter: blur(8px) brightness(120%);
   width: max-content !important;
@@ -71,7 +75,8 @@
 .overflowingOverlayWidgets {
   .suggest-details {
     padding: 0.2rem 0.4rem !important;
-    border-radius: 12px !important;
+    /* border-radius: 12px !important; */
+    border-radius: 2px !important;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
     background-color: transparent !important;
     backdrop-filter: blur(12px) brightness(120%);
