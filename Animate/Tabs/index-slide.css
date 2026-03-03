@@ -1,21 +1,20 @@
-
-.tabs-container > .tab.moveLeft {
+.tabs-container>.tab.moveLeft {
   transform-origin: left;
   z-index: 2;
 }
 
-.tabs-container > .tab.moveRight {
+.tabs-container>.tab.moveRight {
   transform-origin: left;
   animation: tabMoveRight 300ms;
   z-index: 2;
 }
 
-.tabs-container > .tab.newTab {
+.tabs-container>.tab.newTab {
   transform-origin: left;
   animation: openTab3 300ms;
 }
 
-.tabs-container > .tab {
+.tabs-container>.tab {
   z-index: 2;
 }
 
@@ -24,6 +23,7 @@
     opacity: 0;
     transform: rotateX(-90deg);
   }
+
   to {
     opacity: 1;
     transform: rotateX(0);
@@ -36,6 +36,7 @@
     opacity: 0;
     transform: translateX(-50%);
   }
+
   to {
     z-index: 1;
     opacity: 1;
@@ -49,6 +50,7 @@
     opacity: 0;
     transform: translateX(-50%);
   }
+
   to {
     z-index: 1;
     opacity: 1;
@@ -60,6 +62,7 @@
   from {
     transform: translateX(0%);
   }
+
   to {
     transform: translateX(-100%);
   }
@@ -69,6 +72,7 @@
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0%);
   }

@@ -1,7 +1,7 @@
 /* 这里的都没解耦 */
 
 /* 破坏性的特效 */
-.monaco-scrollable-element {
+/* .monaco-scrollable-element {
   animation: monacoScrollableElementAnimate 80ms ease;
 }
 
@@ -20,7 +20,7 @@
     opacity: 1;
     transform: scale(100%);
   }
-}
+} */
 
 /* 主进程窗口全局字体 (中文状态) */
 .windows:lang(zh-Hans) {
@@ -64,7 +64,9 @@
 .tabs-container>.tab:hover {
   --font-color0: var(--vscode-tab-inactiveForeground);
   --font-color1: #fff;
-  animation: fadeLightIn 150ms forwards;
+  /* animation: fadeLightIn 150ms forwards; */
+  color: var(--font-color-1);
+  text-shadow: 0 0 20px var(--font-color-1);
 }
 
 .tabs-container>.tab.active {
@@ -203,8 +205,10 @@
 span.mtk8 {
   --font-color-0: #bbbbbb;
   --font-color-1: #fede5d;
-  text-shadow: 0 0 4px var(--font-color-1);
-  animation: fadeLightIn 0.5s ease-in forwards;
+  /* text-shadow: 0 0 4px var(--font-color-1); */
+  /* animation: fadeLightIn 0.5s ease-in forwards; */
+  color: var(--font-color-1);
+  text-shadow: 0 0 20px var(--font-color-1);
 }
 
 /* span.mtk1 {
@@ -262,7 +266,9 @@ div.command-center.hide {
 div.ibwrapper {
   --font-color-0: #fff;
   --font-color-1: #fff;
-  animation: fadeLightIn 0.2s ease-in;
+  /* animation: fadeLightIn 0.2s ease-in; */
+  color: var(--font-color-1);
+  text-shadow: 0 0 20px var(--font-color-1);
 }
 
 /* 查找 替换 窗口 */
@@ -313,13 +319,17 @@ div.active-line-number {
   --font-color-0: var(--vscode-editorLineNumber-foreground);
   --font-color-1: #fff;
   color: var(--font-color-1) !important;
-  animation: fadeLightBigIn 0.5s ease forwards;
+  /* animation: fadeLightBigIn 0.5s ease forwards; */
+  scale: 1;
+  /* color: var(--font-color-1); */
+  text-shadow: 0 0 20px var(--font-color-1);
 }
 
 /* 不在的行数 */
-/* div.line-numbers {
-  animation: fadeLightOut 0.5s ease-out forwards;
-} */
+div.line-numbers {
+  /* animation: fadeLightOut 0.5s ease-out forwards; */
+  text-shadow: 0 0 0;
+}
 
 /* 滚动的时候黏在上面的代码 */
 div.sticky-widget {
@@ -481,7 +491,7 @@ div.cursor::after {
 }
 
 /* 字体渐渐变亮 */
-@keyframes fadeLightIn {
+/* @keyframes fadeLightIn {
   0% {
     color: var(--font-color-0);
     text-shadow: 0 0 0 var(--font-color-0);
@@ -491,10 +501,10 @@ div.cursor::after {
     color: var(--font-color-1);
     text-shadow: 0 0 20px var(--font-color-1);
   }
-}
+} */
 
 /* 变亮变大 */
-@keyframes fadeLightBigIn {
+/* @keyframes fadeLightBigIn {
   0% {
     scale: 1;
     color: var(--font-color-0);
@@ -510,10 +520,10 @@ div.cursor::after {
     color: var(--font-color-1);
     text-shadow: 0 0 20px var(--font-color-1);
   }
-}
+} */
 
 /* 字体渐渐不亮 */
-@keyframes fadeLightOut {
+/* @keyframes fadeLightOut {
   0% {
     text-shadow: 0 0 20px #fff;
   }
@@ -521,7 +531,7 @@ div.cursor::after {
   100% {
     text-shadow: 0 0 0;
   }
-}
+} */
 
 @keyframes topIn {
   0% {
