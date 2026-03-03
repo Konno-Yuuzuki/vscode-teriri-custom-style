@@ -1,7 +1,7 @@
 /* 这里的都没解耦 */
 
 /* 破坏性的特效 */
-/* .monaco-scrollable-element {
+.monaco-scrollable-element {
   animation: monacoScrollableElementAnimate 80ms ease;
 }
 
@@ -20,7 +20,7 @@
     opacity: 1;
     transform: scale(100%);
   }
-} */
+}
 
 /* 主进程窗口全局字体 (中文状态) */
 .windows:lang(zh-Hans) {
