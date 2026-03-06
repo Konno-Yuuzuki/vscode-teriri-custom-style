@@ -5,3 +5,111 @@
     overflow: visible;
     transform: scale(1.5, 1.5);
 }
+
+div.cursor.monaco-mouse-cursor-text {
+    width: 3px !important;
+}
+
+/* 炫酷光标 */
+div.cursor {
+    animation: 25s linear infinite alternate bp-animation;
+    background: linear-gradient(cyan);
+
+    /* 🌈🌈🌈 炫酷的彩虹光效！🌈🌈🌈 */
+    /* 使用方法：注掉上面那个，用下面这个就行。 */
+    background: linear-gradient(#ff0000,
+            #ff7f00,
+            #ffff00,
+            #00ff00,
+            #00ffff,
+            #0000ff,
+            #8b00ff);
+
+    background-size: 100% 1000%;
+    border-radius: 2px;
+    overflow: visible !important;
+}
+
+
+div.cursor::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: 100% 1000%;
+    border-radius: 3px;
+    transform: scale(140%, 120%);
+    filter: blur(4px) brightness(200%);
+    z-index: -1;
+}
+
+@keyframes bp-animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    20% {
+        background-position: 0 200%;
+    }
+
+    40% {
+        background-position: 0 400%;
+    }
+
+    60% {
+        background-position: 0 600%;
+    }
+
+    80% {
+        background-position: 0 800%;
+    }
+
+    100% {
+        background-position: 0 1000%;
+    }
+}
+
+/* 命令框 */
+div.quick-input-widget {
+    --vscode-quickInput-background: transparent !important;
+    backdrop-filter: blur(12px) brightness(150%);
+    top: 20vh !important;
+    animation: fadeBigIn 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+div.quick-input-widget input[type="text"] {
+    border: none !important;
+}
+
+div.quick-input-widget::after {
+    content: "";
+    position: fixed;
+    top: -100vh;
+    left: -100vw;
+    width: 210vw;
+    height: 210vh;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.1);
+    filter: blur(20px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 顶上的输入框 */
+div.command-center {
+    animation: fadeIn 0.3s ease;
+}
+
+div.command-center.hide {
+    animation: fadeOut 0.2s ease;
+}
+
+/* 命令框的文本输入框 */
+div.ibwrapper {
+    --font-color-0: #fff;
+    --font-color-1: #fff;
+    color: var(--font-color-1);
+}
