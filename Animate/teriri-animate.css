@@ -1,11 +1,11 @@
 /* 这里的都没解耦 */
 
 /* 破坏性的特效 */
-.monaco-scrollable-element {
+/* .monaco-scrollable-element {
   animation: monacoScrollableElementAnimate 80ms ease;
-}
+} */
 
-@keyframes monacoScrollableElementAnimate {
+/* @keyframes monacoScrollableElementAnimate {
   0% {
     opacity: 0;
     transform: scale(90%);
@@ -20,13 +20,13 @@
     opacity: 1;
     transform: scale(100%);
   }
-}
+} */
 
 /* 主进程窗口全局字体 (中文状态) */
-.windows:lang(zh-Hans) {
-  /* font-family: "HarmonyOS Sans NaskhArabic UI", "HarmonyOS Sans SC", monospace; */
+/* .windows:lang(zh-Hans) {
+  font-family: "HarmonyOS Sans NaskhArabic UI", "HarmonyOS Sans SC", monospace;
   font-weight: 500;
-}
+} */
 
 /* 输出栏字体 */
 .monaco-action-bar .action-label {
@@ -64,9 +64,9 @@
 .tabs-container>.tab:hover {
   --font-color0: var(--vscode-tab-inactiveForeground);
   --font-color1: #fff;
-  /* animation: fadeLightIn 150ms forwards; */
   color: var(--font-color-1);
-  text-shadow: 0 0 20px var(--font-color-1);
+  /* animation: fadeLightIn 150ms forwards;
+  text-shadow: 0 0 20px var(--font-color-1); */
 }
 
 .tabs-container>.tab.active {
@@ -78,8 +78,8 @@
   0% {
     scale: 1;
     color: var(--vscode-tab-inactiveForeground);
-    text-shadow: 0 0 0 var(--vscode-tab-inactiveForeground);
     box-shadow: 0 0 0 var(--tab-border-bottom-color);
+    /* text-shadow: 0 0 0 var(--vscode-tab-inactiveForeground); */
   }
 
   40% {
@@ -89,8 +89,8 @@
   100% {
     scale: 1;
     color: var(--vscode-tab-activeForeground);
-    text-shadow: 0 0 1px var(--vscode-tab-activeForeground);
     box-shadow: inset 0 -6px 16px -16px var(--tab-border-bottom-color);
+    /* text-shadow: 0 0 1px var(--vscode-tab-activeForeground); */
   }
 }
 
@@ -208,7 +208,7 @@ span.mtk8 {
   /* text-shadow: 0 0 4px var(--font-color-1); */
   /* animation: fadeLightIn 0.5s ease-in forwards; */
   color: var(--font-color-1);
-  text-shadow: 0 0 20px var(--font-color-1);
+  /* text-shadow: 0 0 20px var(--font-color-1); */
 }
 
 /* span.mtk1 {
@@ -268,7 +268,7 @@ div.ibwrapper {
   --font-color-1: #fff;
   /* animation: fadeLightIn 0.2s ease-in; */
   color: var(--font-color-1);
-  text-shadow: 0 0 20px var(--font-color-1);
+  /* text-shadow: 0 0 20px var(--font-color-1); */
 }
 
 /* 查找 替换 窗口 */
@@ -324,14 +324,14 @@ div.active-line-number {
   /* animation: fadeLightBigIn 0.5s ease forwards; */
   scale: 1;
   /* color: var(--font-color-1); */
-  text-shadow: 0 0 20px var(--font-color-1);
+  /* text-shadow: 0 0 20px var(--font-color-1); */
 }
 
 /* 不在的行数 */
-div.line-numbers {
-  /* animation: fadeLightOut 0.5s ease-out forwards; */
+/* div.line-numbers {
+  animation: fadeLightOut 0.5s ease-out forwards;
   text-shadow: 0 0 0;
-}
+} */
 
 /* 滚动的时候黏在上面的代码 */
 /* div.sticky-widget {
