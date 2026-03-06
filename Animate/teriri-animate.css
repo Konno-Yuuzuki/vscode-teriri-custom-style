@@ -218,7 +218,7 @@ span.mtk8 {
 /* 命令框 */
 div.quick-input-widget {
   --vscode-quickInput-background: transparent !important;
-  backdrop-filter: blur(12px) brightness(150%);
+  /* backdrop-filter: blur(12px) brightness(150%); */
   top: 20vh !important;
   animation: fadeBigIn 0.3s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -274,7 +274,7 @@ div.ibwrapper {
 /* 查找 替换 窗口 */
 div.monaco-editor .find-widget {
   background-color: transparent !important;
-  backdrop-filter: blur(20px) brightness(150%);
+  /* backdrop-filter: blur(20px) brightness(150%); */
 }
 
 /* 二级菜单修复 */
@@ -288,7 +288,7 @@ div.monaco-editor .find-widget {
   background-color: transparent !important;
   /* div.menubar-menu-items-holder.monaco-menu-container {
   background-color: rgba(7, 82, 233, 0.336) !important; */
-  backdrop-filter: blur(20px) brightness(120%);
+  /* backdrop-filter: blur(20px) brightness(120%); */
   /* border-radius: 12px; */
   animation: 300ms ease forwards !important;
 }
@@ -334,7 +334,7 @@ div.line-numbers {
 /* 滚动的时候黏在上面的代码 */
 div.sticky-widget {
   background-color: transparent !important;
-  backdrop-filter: blur(20px) brightness(110%);
+  /* backdrop-filter: blur(20px) brightness(110%); */
   animation: topIn 0.5s cubic-bezier(0.41, 0.61, 0, 1.2) forwards;
 }
 
