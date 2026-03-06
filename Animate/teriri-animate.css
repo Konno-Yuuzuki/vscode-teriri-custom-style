@@ -218,7 +218,7 @@ span.mtk8 {
 /* 命令框 */
 div.quick-input-widget {
   --vscode-quickInput-background: transparent !important;
-  /* backdrop-filter: blur(12px) brightness(150%); */
+  backdrop-filter: blur(12px) brightness(150%);
   top: 20vh !important;
   animation: fadeBigIn 0.3s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -274,7 +274,7 @@ div.ibwrapper {
 /* 查找 替换 窗口 */
 div.monaco-editor .find-widget {
   background-color: transparent !important;
-  /* backdrop-filter: blur(20px) brightness(150%); */
+  backdrop-filter: blur(20px) brightness(150%);
 }
 
 /* 二级菜单修复 */
@@ -286,212 +286,213 @@ div.monaco-editor .find-widget {
 /* 菜单容器 */
 .monaco-menu-container {
   background-color: transparent !important;
-  /* div.menubar-menu-items-holder.monaco-menu-container {
-  background-color: rgba(7, 82, 233, 0.336) !important; */
-  /* backdrop-filter: blur(20px) brightness(120%); */
-  /* border-radius: 12px; */
-  animation: 300ms ease forwards !important;
-}
 
-@keyframes rightClickMenuFadeBigIn {
-  0% {
-    opacity: 0;
-    scale: 0.9;
+  div.menubar-menu-items-holder.monaco-menu-container {
+    background-color: rgba(7, 82, 233, 0.336) !important;
+    backdrop-filter: blur(20px) brightness(120%);
+    /* border-radius: 12px; */
+    animation: 300ms ease forwards !important;
   }
 
-  40% {
-    opacity: 0.8;
-    scale: 1.02;
+  @keyframes rightClickMenuFadeBigIn {
+    0% {
+      opacity: 0;
+      scale: 0.9;
+    }
+
+    40% {
+      opacity: 0.8;
+      scale: 1.02;
+    }
+
+    100% {
+      scale: 1;
+    }
   }
 
-  100% {
+  /* 各种输入 */
+  div.monaco-inputbox {
+    background-color: transparent !important;
+  }
+
+  /* 所在行数 */
+  div.active-line-number {
+    --font-color-0: var(--vscode-editorLineNumber-foreground);
+    --font-color-1: #fff;
+    color: var(--font-color-1) !important;
+    /* animation: fadeLightBigIn 0.5s ease forwards; */
     scale: 1;
+    /* color: var(--font-color-1); */
+    text-shadow: 0 0 20px var(--font-color-1);
   }
-}
 
-/* 各种输入 */
-div.monaco-inputbox {
+  /* 不在的行数 */
+  div.line-numbers {
+    /* animation: fadeLightOut 0.5s ease-out forwards; */
+    text-shadow: 0 0 0;
+  }
+
+  /* 滚动的时候黏在上面的代码 */
+  /* div.sticky-widget {
   background-color: transparent !important;
-}
-
-/* 所在行数 */
-div.active-line-number {
-  --font-color-0: var(--vscode-editorLineNumber-foreground);
-  --font-color-1: #fff;
-  color: var(--font-color-1) !important;
-  /* animation: fadeLightBigIn 0.5s ease forwards; */
-  scale: 1;
-  /* color: var(--font-color-1); */
-  text-shadow: 0 0 20px var(--font-color-1);
-}
-
-/* 不在的行数 */
-div.line-numbers {
-  /* animation: fadeLightOut 0.5s ease-out forwards; */
-  text-shadow: 0 0 0;
-}
-
-/* 滚动的时候黏在上面的代码 */
-div.sticky-widget {
-  background-color: transparent !important;
-  /* backdrop-filter: blur(20px) brightness(110%); */
+  backdrop-filter: blur(20px) brightness(110%);
   animation: topIn 0.5s cubic-bezier(0.41, 0.61, 0, 1.2) forwards;
-}
+} */
 
 
-.overflowingContentWidgets {
+  .overflowingContentWidgets {
 
-  /* 代码提示框 */
-  .editor-widget.suggest-widget {
-    transition:
-      top 100ms ease,
-      left 300ms ease,
-      top 300ms, height 300ms;
-    animation: fadeBigIn 100ms ease;
+    /* 代码提示框 */
+    .editor-widget.suggest-widget {
+      transition:
+        top 100ms ease,
+        left 300ms ease,
+        top 300ms, height 300ms;
+      animation: fadeBigIn 100ms ease;
+    }
+
+    /* 鼠标悬停在代码上的提示框 */
+    .monaco-hover:not(.hidden) {
+      animation: fadeBigIn 0.1s ease;
+      /* max-height: 500px !important; */
+      /* overflow-y: auto !important; */
+    }
+
+    div[widgetid="editor.contrib.resizableContentHoverWidget"] {
+      transition: top 200ms ease, left 300ms ease;
+    }
   }
 
-  /* 鼠标悬停在代码上的提示框 */
-  .monaco-hover:not(.hidden) {
-    animation: fadeBigIn 0.1s ease;
-    /* max-height: 500px !important; */
-    /* overflow-y: auto !important; */
+  .overflowingOverlayWidgets {
+
+    /* 代码提示框行的提示框 */
+    .suggest-details {
+      animation: fadeBigIn 100ms ease;
+    }
   }
 
-  div[widgetid="editor.contrib.resizableContentHoverWidget"] {
-    transition: top 200ms ease, left 300ms ease;
-  }
-}
+  @keyframes fadeTopIn-codeIdea {
+    0% {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
 
-.overflowingOverlayWidgets {
+    40% {
+      opacity: 1;
+      transform: translateY(5%);
+    }
 
-  /* 代码提示框行的提示框 */
-  .suggest-details {
-    animation: fadeBigIn 100ms ease;
-  }
-}
-
-@keyframes fadeTopIn-codeIdea {
-  0% {
-    opacity: 0;
-    transform: translateY(-10%);
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
   }
 
-  40% {
-    opacity: 1;
-    transform: translateY(5%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
-/* @keyframes codeIdeaAnimate {
+  /* @keyframes codeIdeaAnimate {
   0% {}
 } */
 
-/* 鼠标悬停某些标签上的文字提示 */
-.context-view.monaco-component.top.left[style*="left"],
-.context-view.monaco-component.top.left[style*="top"] {
-  /* transition-property: left top;
+  /* 鼠标悬停某些标签上的文字提示 */
+  .context-view.monaco-component.top.left[style*="left"],
+  .context-view.monaco-component.top.left[style*="top"] {
+    /* transition-property: left top;
   transition-duration: 200ms;
   transition-timing-function: ease; */
-}
+  }
 
-.context-view.monaco-component.bottom.left[style*="left"],
-.context-view.monaco-component.bottom.left[style*="top"] {
-  animation: fadeBigIn 100ms ease;
-}
+  .context-view.monaco-component.bottom.left[style*="left"],
+  .context-view.monaco-component.bottom.left[style*="top"] {
+    animation: fadeBigIn 100ms ease;
+  }
 
-/* 通知 */
-.notifications-center.visible {
-  animation: fadeBigIn 100ms ease;
-}
+  /* 通知 */
+  .notifications-center.visible {
+    animation: fadeBigIn 100ms ease;
+  }
 
-/* 底栏 */
-footer.part.statusbar
-/* 侧边栏 */
-/* div.split-view-view.visible .part.activitybar.left {
+  /* 底栏 */
+  footer.part.statusbar
+  /* 侧边栏 */
+  /* div.split-view-view.visible .part.activitybar.left {
 
 } */
 
-/* Code 左侧边线 */
-div.view-lines.monaco-mouse-cursor-text {
-  box-shadow: 0 0 4px 2px rgb(22, 25, 27);
-}
-
-div.monaco-split-view2.vertical.separator-border {
-  --separator-border: #495495;
-}
-
-div.cursor.monaco-mouse-cursor-text {
-  width: 3px !important;
-}
-
-/* 炫酷光标 */
-div.cursor {
-  animation: 25s linear infinite alternate bp-animation;
-  /* background: linear-gradient(cyan); */
-
-  /* 🌈🌈🌈 炫酷的彩虹光效！🌈🌈🌈 */
-  /* 使用方法：注掉上面那个，用下面这个就行。 */
-  background: linear-gradient(#ff0000,
-      #ff7f00,
-      #ffff00,
-      #00ff00,
-      #00ffff,
-      #0000ff,
-      #8b00ff);
-
-  background-size: 100% 1000%;
-  border-radius: 2px;
-  overflow: visible !important;
-}
-
-div.cursor::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  background-size: 100% 1000%;
-  border-radius: 3px;
-  transform: scale(140%, 120%);
-  filter: blur(4px) brightness(200%);
-  z-index: -1;
-}
-
-@keyframes bp-animation {
-  0% {
-    background-position: 0 0;
+  /* Code 左侧边线 */
+  div.view-lines.monaco-mouse-cursor-text {
+    box-shadow: 0 0 4px 2px rgb(22, 25, 27);
   }
 
-  20% {
-    background-position: 0 200%;
+  div.monaco-split-view2.vertical.separator-border {
+    --separator-border: #495495;
   }
 
-  40% {
-    background-position: 0 400%;
+  div.cursor.monaco-mouse-cursor-text {
+    width: 3px !important;
   }
 
-  60% {
-    background-position: 0 600%;
+  /* 炫酷光标 */
+  div.cursor {
+    animation: 25s linear infinite alternate bp-animation;
+    /* background: linear-gradient(cyan); */
+
+    /* 🌈🌈🌈 炫酷的彩虹光效！🌈🌈🌈 */
+    /* 使用方法：注掉上面那个，用下面这个就行。 */
+    background: linear-gradient(#ff0000,
+        #ff7f00,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #8b00ff);
+
+    background-size: 100% 1000%;
+    border-radius: 2px;
+    overflow: visible !important;
   }
 
-  80% {
-    background-position: 0 800%;
+  div.cursor::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: 100% 1000%;
+    border-radius: 3px;
+    transform: scale(140%, 120%);
+    filter: blur(4px) brightness(200%);
+    z-index: -1;
   }
 
-  100% {
-    background-position: 0 1000%;
-  }
-}
+  @keyframes bp-animation {
+    0% {
+      background-position: 0 0;
+    }
 
-/* 字体渐渐变亮 */
-/* @keyframes fadeLightIn {
+    20% {
+      background-position: 0 200%;
+    }
+
+    40% {
+      background-position: 0 400%;
+    }
+
+    60% {
+      background-position: 0 600%;
+    }
+
+    80% {
+      background-position: 0 800%;
+    }
+
+    100% {
+      background-position: 0 1000%;
+    }
+  }
+
+  /* 字体渐渐变亮 */
+  /* @keyframes fadeLightIn {
   0% {
     color: var(--font-color-0);
     text-shadow: 0 0 0 var(--font-color-0);
@@ -503,8 +504,8 @@ div.cursor::after {
   }
 } */
 
-/* 变亮变大 */
-/* @keyframes fadeLightBigIn {
+  /* 变亮变大 */
+  /* @keyframes fadeLightBigIn {
   0% {
     scale: 1;
     color: var(--font-color-0);
@@ -522,8 +523,8 @@ div.cursor::after {
   }
 } */
 
-/* 字体渐渐不亮 */
-/* @keyframes fadeLightOut {
+  /* 字体渐渐不亮 */
+  /* @keyframes fadeLightOut {
   0% {
     text-shadow: 0 0 20px #fff;
   }
@@ -533,46 +534,46 @@ div.cursor::after {
   }
 } */
 
-@keyframes topIn {
-  0% {
-    transform: translateY(-200px);
+  @keyframes topIn {
+    0% {
+      transform: translateY(-200px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
   }
 
-  100% {
-    transform: translateY(0);
-  }
-}
+  @keyframes fadeBigIn {
+    0% {
+      opacity: 0;
+      transform: scale(90%);
+    }
 
-@keyframes fadeBigIn {
-  0% {
-    opacity: 0;
-    transform: scale(90%);
-  }
+    40% {
+      opacity: 1;
+      transform: scale(105%);
+    }
 
-  40% {
-    opacity: 1;
-    transform: scale(105%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(100%);
-  }
-}
-
-@keyframes hoverFadeBigIn {
-  0% {
-    opacity: 0;
-    scale: 0.9;
+    100% {
+      opacity: 1;
+      transform: scale(100%);
+    }
   }
 
-  40% {
-    opacity: 1;
-    scale: 1.05;
-  }
+  @keyframes hoverFadeBigIn {
+    0% {
+      opacity: 0;
+      scale: 0.9;
+    }
 
-  100% {
-    opacity: 1;
-    scale: 1;
+    40% {
+      opacity: 1;
+      scale: 1.05;
+    }
+
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
   }
-}

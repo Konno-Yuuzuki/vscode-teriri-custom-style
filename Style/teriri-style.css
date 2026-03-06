@@ -22,13 +22,13 @@
 .context-view.monaco-component {
   background-color: rgba(40, 44, 52, 0.2) !important;
   box-shadow: 0 0 8px 2px rgb(32, 36, 42) !important;
-  /* backdrop-filter: blur(8px) brightness(120%); */
+  backdrop-filter: blur(8px) brightness(120%);
 }
 
 /* 通知 */
 .notifications-center.visible {
   background-color: transparent !important;
-  /* backdrop-filter: blur(20px) brightness(110%); */
+  backdrop-filter: blur(20px) brightness(110%);
 
   div {
     /* 为通知内部容器添加透明支持 */
@@ -51,7 +51,7 @@
     border-radius: 2px !important;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2) !important;
     background-color: transparent !important;
-    /* backdrop-filter: blur(12px) brightness(120%); */
+    backdrop-filter: blur(12px) brightness(120%);
   }
 }
 
