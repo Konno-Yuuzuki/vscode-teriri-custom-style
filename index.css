@@ -100,6 +100,7 @@ div.quick-input-widget::after {
 
 /* 顶上的输入框 */
 div.command-center {
+
     animation: fadeIn 0.3s ease;
 }
 
@@ -112,4 +113,128 @@ div.ibwrapper {
     --font-color-0: #fff;
     --font-color-1: #fff;
     color: var(--font-color-1);
+}
+
+
+
+/* 文件侧边栏 */
+/* 需要实现两个类：
+    .selected
+    .focused
+*/
+.explorer-folders-view>.monaco-list>.monaco-scrollable-element {
+    .monaco-list-rows[style*="height"] {
+        transition: height 100ms ease-out;
+    }
+
+    .monaco-list-row {
+        animation: fileTopInAnimate 0.2s ease;
+    }
+
+    .monaco-list-row[style*="top"] {
+        transition: top 0.2s cubic-bezier(0.41, 0.61, 0, 1.1), scale 0.1s ease;
+    }
+
+    .monaco-list-row.selected {
+        scale: 1.02;
+
+        span.monaco-icon-name-container::after {
+            content: "🔍";
+            margin-left: 1em;
+            display: inline-block;
+            animation: fileSelectedhandRightInAnimate 0.3s ease;
+        }
+    }
+
+    .monaco-list-row:hover {
+        span.monaco-icon-name-container::after {
+            content: "👈";
+            margin-left: 1em;
+            display: inline-block;
+            animation: fileSelectedhandRightInAnimate 0.3s ease;
+        }
+    }
+
+    /* 清除全局样式 */
+    .monaco-list-row.focused {
+        scale: 1 !important;
+        transform: none !important;
+        width: 97%;
+    }
+}
+
+@keyframes fileSelectedhandRightInAnimate {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(2%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+/* 文件选择页面里面的下滑动画 */
+@keyframes fileTopInAnimate {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+
+/* 查找 替换 窗口 */
+div.monaco-editor .find-widget {
+    background-color: transparent !important;
+    backdrop-filter: blur(20px) brightness(150%);
+}
+
+/* 二级菜单修复 */
+.action-item .monaco-submenu {
+    background-color: #241B2FEE !important;
+}
+
+
+/* 菜单容器 */
+.monaco-menu-container {
+    background-color: transparent !important;
+
+    div.menubar-menu-items-holder.monaco-menu-container {
+        background-color: rgba(7, 82, 233, 0.336) !important;
+        backdrop-filter: blur(20px) brightness(120%);
+        /* border-radius: 12px; */
+        animation: 300ms ease forwards !important;
+    }
+}
+
+@keyframes rightClickMenuFadeBigIn {
+    0% {
+        opacity: 0;
+        scale: 0.9;
+    }
+
+    40% {
+        opacity: 0.8;
+        scale: 1.02;
+    }
+
+    100% {
+        scale: 1;
+    }
 }
