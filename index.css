@@ -6,6 +6,18 @@
     transform: scale(1.5, 1.5);
 }
 
+/* 编辑器底色统一 - 样式*/
+.monaco-workbench {
+    background-color: var(--vscode-editor-background);
+}
+
+
+/* 提示灯泡的移动 */
+.lightBulbWidget {
+    transition: top 200ms;
+}
+
+
 div.cursor.monaco-mouse-cursor-text {
     width: 3px !important;
 }
@@ -196,7 +208,6 @@ div.ibwrapper {
         transform: translateY(0%);
     }
 }
-
 
 
 /* 查找 替换 窗口 */
