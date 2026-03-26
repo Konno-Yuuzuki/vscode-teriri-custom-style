@@ -22,11 +22,7 @@
   }
 } */
 
-/* 主进程窗口全局字体 (中文状态) */
-/* .windows:lang(zh-Hans) {
-  font-family: "HarmonyOS Sans NaskhArabic UI", "HarmonyOS Sans SC", monospace;
-  font-weight: 500;
-} */
+
 
 /* 输出栏字体 */
 .monaco-action-bar .action-label {
