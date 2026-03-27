@@ -23,6 +23,14 @@
 } */
 
 
+/* 主进程窗口全局字体 (中文状态) */
+.windows:lang(zh-Hans),
+.linux:lang(zh-Hans),
+.mac:lang(zh-Hans) {
+  font-weight: 500;
+}
+
+
 
 /* 输出栏字体 */
 .monaco-action-bar .action-label {
