@@ -206,14 +206,14 @@
 }
 
 /* 关键字高亮 */
-span.mtk8 {
+/* span.mtk8 {
   --font-color-0: #bbbbbb;
   --font-color-1: #fede5d;
-  /* text-shadow: 0 0 4px var(--font-color-1); */
-  /* animation: fadeLightIn 0.5s ease-in forwards; */
+  text-shadow: 0 0 4px var(--font-color-1);
+  animation: fadeLightIn 0.5s ease-in forwards;
   color: var(--font-color-1);
-  /* text-shadow: 0 0 20px var(--font-color-1); */
-}
+  text-shadow: 0 0 20px var(--font-color-1);
+} */
 
 /* span.mtk1 {
   color: rgb(216, 201, 134) !important;
