@@ -55,9 +55,9 @@
 } */
 
 /* 编辑器底色统一 - 样式*/
-.monaco-workbench {
+/* .monaco-workbench {
   background-color: var(--vscode-editor-background);
-}
+} */
 
 /* 提示灯泡的移动 */
 .lightBulbWidget {
@@ -276,24 +276,24 @@ div.ibwrapper {
 }
 
 /* 查找 替换 窗口 */
-div.monaco-editor .find-widget {
+/* div.monaco-editor .find-widget {
   background-color: transparent !important;
   backdrop-filter: blur(20px) brightness(150%);
-}
+} */
 
 /* 二级菜单修复 */
-.action-item .monaco-submenu {
+/* .action-item .monaco-submenu {
   background-color: #241B2FEE !important;
-}
+} */
 
 
 /* 菜单容器 */
 .monaco-menu-container {
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
 
   div.menubar-menu-items-holder.monaco-menu-container {
-    background-color: rgba(7, 82, 233, 0.336) !important;
-    backdrop-filter: blur(20px) brightness(120%);
+    /* background-color: rgba(7, 82, 233, 0.336) !important; */
+    /* backdrop-filter: blur(20px) brightness(120%); */
     /* border-radius: 12px; */
     animation: 300ms ease forwards !important;
   }
@@ -316,9 +316,9 @@ div.monaco-editor .find-widget {
 }
 
 /* 各种输入 */
-div.monaco-inputbox {
+/* div.monaco-inputbox {
   background-color: transparent !important;
-}
+} */
 
 /* 所在行数 */
 div.active-line-number {
