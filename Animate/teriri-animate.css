@@ -2,6 +2,9 @@
 .windows:lang(zh-Hans),
 .linux:lang(zh-Hans),
 .mac:lang(zh-Hans) {
+.windows:lang(zh-Hans),
+.linux:lang(zh-Hans),
+.mac:lang(zh-Hans) {
   font-weight: 500;
 }
 
