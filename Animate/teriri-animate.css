@@ -157,7 +157,7 @@ div.search-view div.monaco-list-row.selected div.monaco-tl-twistie:not(.codicon)
 /* 命令面板 */
 div.quick-input-widget {
   --vscode-quickInput-background: transparent !important;
-  backdrop-filter: blur(12px) brightness(150%);
+  backdrop-filter: blur(10px) brightness(120%);
   top: 20vh !important;
   animation: fadeBigIn 0.3s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -200,7 +200,7 @@ div.command-center.hide {
     display: block;
     z-index: -1;
     background-color: transparent;
-    backdrop-filter: blur(12px) brightness(150%) !important;
+    backdrop-filter: blur(10px) brightness(120%) !important;
   }
 
   &>.monaco-scrollable-element {
@@ -208,7 +208,7 @@ div.command-center.hide {
   }
 
   div.monaco-submenu>.monaco-scrollable-element {
-    backdrop-filter: blur(12px) brightness(150%) !important;
+    backdrop-filter: blur(10px) brightness(120%) !important;
   }
 
   .monaco-action-bar .action-item {
@@ -234,9 +234,6 @@ div.command-center.hide {
     animation: rightClickMenuFadeBigIn 300ms ease forwards !important;
   } */
 }
-
-
-
 
 @keyframes rightClickMenuFadeBigIn {
   0% {
@@ -394,5 +391,44 @@ div.cursor {
 
   to {
     opacity: 0;
+  }
+}
+
+
+
+.monaco-editor .suggest-widget,
+.monaco-editor .suggest-details {
+  --vscode-editorSuggestWidget-background: transparent !important;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: transparent;
+    border-radius: var(--vscode-cornerRadius-large);
+    backdrop-filter: blur(10px) brightness(120%) !important;
+  }
+
+
+  .monaco-highlighted-label::after {
+    content: "👈";
+    margin-left: 1em;
+    visibility: hidden;
+    display: inline-block;
+  }
+
+  .monaco-list-row.focused .monaco-highlighted-label::after {
+    visibility: visible;
+  }
+
+
+  .monaco-list-row .contents {
+    transition: transform 200ms ease;
+  }
+
+  .monaco-list-row.focused .contents {
+    transform: translateX(10px);
   }
 }
