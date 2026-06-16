@@ -47,7 +47,17 @@
   }
 
   div.monaco-submenu>.monaco-scrollable-element {
-    backdrop-filter: blur(10px) brightness(120%) !important;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      display: block;
+      z-index: -1;
+      background-color: transparent;
+      backdrop-filter: blur(10px) brightness(120%) !important;
+    }
   }
 
   .monaco-action-bar .action-item {
