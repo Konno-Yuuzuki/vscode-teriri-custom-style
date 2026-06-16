@@ -186,11 +186,11 @@ div.command-center.hide {
 
 
 /* 右键菜单动画 */
-.menubar-menu-title+.monaco-menu-container {
+/* .menubar-menu-title+ */
+.monaco-menu-container {
   /* 半透底色兜底，适配所有主题，平衡毛玻璃质感与文字可读性 */
   --vscode-menu-background: transparent !important;
 
-  /* background-color: color-mix(in srgb, var(--vscode-menu-background) 85%, transparent) !important; */
   &::after {
     content: "";
     position: absolute;
@@ -203,7 +203,6 @@ div.command-center.hide {
     backdrop-filter: blur(12px) brightness(150%) !important;
   }
 
-  /* z-index: 1000 !important; */
   &>.monaco-scrollable-element {
     overflow: visible !important;
   }
@@ -213,7 +212,6 @@ div.command-center.hide {
   }
 
   .monaco-action-bar .action-item {
-
     & span.keybinding {
       padding: 0 2em 0 0;
     }
@@ -231,6 +229,7 @@ div.command-center.hide {
     }
   }
 
+  /* 开启后二级菜单显示异常 */
   /* div.menubar-menu-items-holder.monaco-menu-container {
     animation: rightClickMenuFadeBigIn 300ms ease forwards !important;
   } */
