@@ -29,7 +29,6 @@
 /* 滚动容器：完全透明，透出外层毛玻璃 */
 .monaco-menu-container {
   --vscode-menu-background: transparent !important;
-
   &::after {
     content: "";
     position: absolute;
@@ -46,8 +45,7 @@
     overflow: visible !important;
   }
 
-  div.monaco-submenu>.monaco-scrollable-element {
-    &::after {
+  div.monaco-submenu>.monaco-scrollable-element::after {
       content: "";
       position: absolute;
       width: 100%;
@@ -57,7 +55,6 @@
       z-index: -1;
       background-color: transparent;
       backdrop-filter: blur(10px) brightness(120%) !important;
-    }
   }
 
   .monaco-action-bar .action-item {
