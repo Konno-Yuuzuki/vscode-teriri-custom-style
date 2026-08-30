@@ -186,10 +186,11 @@ div.command-center.hide {
 
 
 /* 右键菜单动画 */
-/* .menubar-menu-title+ */
-.monaco-menu-container {
-    /* 半透底色兜底，适配所有主题，平衡毛玻璃质感与文字可读性 */
-    --vscode-menu-background: transparent !important;
+/* 一级菜单容器：背景透明 + ::after 毛玻璃层。
+   注意：Menu 构造器会给每一级容器（含子菜单容器）都加上 .monaco-menu-container，
+   必须用 :not(.monaco-submenu) 排除子菜单，否则毛玻璃层会逐层重复生成 */
+.monaco-menu-container:not(.monaco-submenu) {
+    background-color: transparent !important;
 
     &::after {
         content: "";
@@ -205,25 +206,32 @@ div.command-center.hide {
 
     &>.monaco-scrollable-element {
         overflow: visible !important;
+        background-color: transparent !important;
     }
 
-    div.monaco-submenu>.monaco-scrollable-element {
-
-        /* backdrop-filter: blur(10px) brightness(120%) !important;
-     */
-        &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            inset: 0;
-            display: block;
-            z-index: -1;
-            background-color: transparent;
-            backdrop-filter: blur(10px) brightness(120%) !important;
-        }
+    /* 菜单内容层全部透明，毛玻璃统一由容器 ::after / 子菜单容器自身提供 */
+    .monaco-menu {
+        background-color: transparent !important;
     }
+}
 
+/* 二级（及更深）菜单：毛玻璃直接放在子菜单容器自身。
+   子菜单嵌套在父菜单的 stacking context（position:fixed + z-index）内，
+   再用 z-index:-1 的 ::after 嵌套 backdrop-filter 会采样不到背景（表现为纯透明），
+   因此改为容器自身 backdrop-filter + 半透明兜底色，保证任何场景都可读 */
+.monaco-submenu.menubar-menu-items-holder {
+    background-color: color-mix(in srgb, var(--vscode-menu-background, #252526) 72%, transparent) !important;
+    backdrop-filter: blur(10px) brightness(120%) !important;
+    border-radius: 6px;
+
+    &>.monaco-scrollable-element {
+        background-color: transparent !important;
+        overflow: visible !important;
+    }
+}
+
+/* 菜单项装饰（对每一级菜单生效） */
+.monaco-menu-container {
     .monaco-action-bar .action-item {
         & span.keybinding {
             padding: 0 2em 0 0;
@@ -241,11 +249,6 @@ div.command-center.hide {
             visibility: visible;
         }
     }
-
-    /* 开启后二级菜单显示异常 */
-    /* div.menubar-menu-items-holder.monaco-menu-container {
-    animation: rightClickMenuFadeBigIn 300ms ease forwards !important;
-  } */
 }
 
 @keyframes rightClickMenuFadeBigIn {

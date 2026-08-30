@@ -26,9 +26,13 @@
 
     // ========== Shadow 内部自定义样式 ==========
     const MENU_INNER_STYLES = `
-/* 滚动容器：完全透明，透出外层毛玻璃 */
-.monaco-menu-container {
-    --vscode-menu-background: transparent !important;
+/* 一级菜单容器：背景透明 + ::after 毛玻璃层。
+   注意 1：Menu 构造器会给每一级容器（含子菜单容器）都加上 .monaco-menu-container，
+   必须用 :not(.monaco-submenu) 排除子菜单，否则毛玻璃层会逐层重复生成。
+   注意 2：这里直接覆盖元素背景而不是改写 --vscode-menu-background 变量——
+   自定义属性会继承进子菜单，若设为 transparent，子菜单的兜底色将失效 */
+.monaco-menu-container:not(.monaco-submenu) {
+    background-color: transparent !important;
     &::after {
         content: "";
         position: absolute;
@@ -43,20 +47,33 @@
 
     &>.monaco-scrollable-element {
         overflow: visible !important;
+        background-color: transparent !important;
     }
 
-    /* div.monaco-submenu>.monaco-scrollable-element::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        inset: 0;
-        display: block;
-        z-index: -1;
-        background-color: transparent;
-        backdrop-filter: blur(10px) brightness(120%) !important;
-    } */
+    /* 菜单内容层全部透明，毛玻璃统一由容器 ::after / 子菜单容器自身提供。
+       后代选择器会穿透到子菜单内部，正好让子菜单的 .monaco-menu 也保持透明 */
+    .monaco-menu {
+        background-color: transparent !important;
+    }
+}
 
+/* 二级（及更深）菜单：毛玻璃直接放在子菜单容器自身。
+   子菜单嵌套在父菜单的 stacking context（position:fixed + z-index）内，
+   再用 z-index:-1 的 ::after 嵌套 backdrop-filter 会采样不到背景（表现为纯透明），
+   因此改为容器自身 backdrop-filter + 半透明兜底色，保证任何场景都可读 */
+.monaco-submenu.menubar-menu-items-holder {
+    background-color: color-mix(in srgb, var(--vscode-menu-background, #252526) 72%, transparent) !important;
+    backdrop-filter: blur(10px) brightness(120%) !important;
+    border-radius: 6px;
+
+    &>.monaco-scrollable-element {
+        background-color: transparent !important;
+        overflow: visible !important;
+    }
+}
+
+/* 菜单项装饰（对每一级菜单生效） */
+.monaco-menu-container {
     .monaco-action-bar .action-item {
         & span.keybinding {
             padding: 0 2em 0 0;

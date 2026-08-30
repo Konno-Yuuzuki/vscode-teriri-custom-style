@@ -1,1 +1,3 @@
-{}
+{
+    "github.copilot.llm-gateway.serverUrl": "http://10.126.126.1:8888"
+}
