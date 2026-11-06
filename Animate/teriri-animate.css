@@ -2,13 +2,7 @@
 .windows:lang(zh-Hans),
 .linux:lang(zh-Hans),
 .mac:lang(zh-Hans) {
-
-    .windows:lang(zh-Hans),
-    .linux:lang(zh-Hans),
-    .mac:lang(zh-Hans) {
-        font-weight: 500;
-    }
-
+    font-weight: 500;
 }
 
 /* 输出栏字体 */
@@ -94,11 +88,6 @@
 /* ========== 文件树优化版 ========== */
 .explorer-folders-view>.monaco-list>.monaco-scrollable-element {
 
-    /* 仅保留文件夹折叠时的高度过渡（触发频率极低） */
-    .monaco-list-rows[style*="height"] {
-        transition: height 100ms ease-out;
-    }
-
     .monaco-list-row {
         transition: transform 150ms ease;
         transform-origin: left center;
@@ -157,7 +146,7 @@ div.search-view div.monaco-list-row.selected div.monaco-tl-twistie:not(.codicon)
 /* 命令面板 */
 div.quick-input-widget {
     --vscode-quickInput-background: transparent !important;
-    backdrop-filter: blur(10px) brightness(120%);
+    backdrop-filter: blur(6px) brightness(120%);
     top: 20vh !important;
     animation: fadeBigIn 0.3s ease-in-out;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -186,7 +175,6 @@ div.command-center.hide {
 
 
 /* 右键菜单动画 */
-/* .menubar-menu-title+ */
 .monaco-menu-container {
     /* 半透底色兜底，适配所有主题，平衡毛玻璃质感与文字可读性 */
     --vscode-menu-background: transparent !important;
@@ -200,7 +188,7 @@ div.command-center.hide {
         display: block;
         z-index: -1;
         background-color: transparent;
-        backdrop-filter: blur(10px) brightness(120%) !important;
+        backdrop-filter: blur(6px) brightness(120%) !important;
     }
 
     &>.monaco-scrollable-element {
@@ -209,8 +197,6 @@ div.command-center.hide {
 
     div.monaco-submenu>.monaco-scrollable-element {
 
-        /* backdrop-filter: blur(10px) brightness(120%) !important;
-     */
         &::after {
             content: "";
             position: absolute;
@@ -220,7 +206,7 @@ div.command-center.hide {
             display: block;
             z-index: -1;
             background-color: transparent;
-            backdrop-filter: blur(10px) brightness(120%) !important;
+            backdrop-filter: blur(6px) brightness(120%) !important;
         }
     }
 
@@ -234,7 +220,6 @@ div.command-center.hide {
             margin-left: 1em;
             visibility: hidden;
             display: inline-block;
-            /* animation: fileSelectedhandRightInAnimate 0.3s ease; */
         }
 
         &.focused>.action-menu-item>span.action-label::after {
@@ -243,9 +228,6 @@ div.command-center.hide {
     }
 
     /* 开启后二级菜单显示异常 */
-    /* div.menubar-menu-items-holder.monaco-menu-container {
-    animation: rightClickMenuFadeBigIn 300ms ease forwards !important;
-  } */
 }
 
 @keyframes rightClickMenuFadeBigIn {
@@ -269,7 +251,6 @@ div.active-line-number {
     --font-color-0: var(--vscode-editorLineNumber-foreground);
     --font-color-1: #fff;
     color: var(--font-color-1) !important;
-    transform: scale(1);
 }
 
 /* 代码提示与悬浮框 */
@@ -305,9 +286,6 @@ div.active-line-number {
 }
 
 /* 编辑器阴影与分割线 */
-/* div.view-lines.monaco-mouse-cursor-text {
-    box-shadow: 0 0 4px 2px rgb(22, 25, 27, 0.1);
-} */
 
 div.monaco-split-view2.vertical.separator-border {
     --separator-border: #495495;
@@ -422,7 +400,7 @@ div.cursor {
         inset: 0;
         background-color: transparent;
         border-radius: var(--vscode-cornerRadius-large);
-        backdrop-filter: blur(10px) brightness(120%) !important;
+        backdrop-filter: blur(6px) brightness(120%) !important;
     }
 
 
