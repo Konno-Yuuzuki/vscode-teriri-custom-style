@@ -329,16 +329,17 @@ div.cursor {
             #8b00ff);
     background-size: 100% 1000%;
     border-radius: 2px;
-    will-change: background-position;
+    /* hue-rotate 可交给合成器; background-position 会每帧回主线程重绘(空转元凶) */
+    will-change: filter;
 }
 
 @keyframes bp-animation {
     0% {
-        background-position: 0 0;
+        filter: hue-rotate(0deg);
     }
 
     100% {
-        background-position: 0 1000%;
+        filter: hue-rotate(360deg);
     }
 }
 
