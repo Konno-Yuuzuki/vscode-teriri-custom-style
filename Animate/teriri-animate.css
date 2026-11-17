@@ -1,303 +1,213 @@
-/* 主进程窗口全局字体 (中文状态) */
-.windows:lang(zh-Hans),
-.linux:lang(zh-Hans),
-.mac:lang(zh-Hans) {
-  font-weight: 500;
-}
-
-/* 输出栏字体 */
-.monaco-action-bar .action-label {
-  font-size: 15px;
-}
-
-/* 侧边栏一级标题字体 */
-.monaco-workbench .part>.title>.title-label h2 {
-  font-size: 15px;
-}
-
-/* 侧边栏二级标题字体 */
-.monaco-pane-view .pane>.pane-header h3.title {
-  font-size: 13px;
-}
-
 /* 提示灯泡过渡 */
 .lightBulbWidget {
-  transition: transform 200ms;
-}
-
-/* 标签栏 hover */
-.tabs-container>.tab:hover {
-  --font-color0: var(--vscode-tab-inactiveForeground);
-  --font-color1: #fff;
-  color: var(--font-color-1);
-}
-
-/* 标签激活动画 */
-.tabs-container>.tab.active {
-  border-bottom: 1px solid var(--tab-border-bottom-color);
-  animation: tab-active-animate 300ms forwards;
-}
-
-@keyframes tab-active-animate {
-  0% {
-    transform: scale(1);
-    color: var(--vscode-tab-inactiveForeground);
-  }
-  40% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-    color: var(--vscode-tab-activeForeground);
-    box-shadow: inset 0 -6px 16px -16px var(--tab-border-bottom-color);
-  }
-}
-
-/* 面包屑入场动画 */
-.monaco-breadcrumb-item {
-  animation: monacoBreadcrumbItem 0.3s ease;
-}
-
-@keyframes monacoBreadcrumbItem {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%);
-  }
-  40% {
-    opacity: 1;
-    transform: translateX(1%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-/* 扩展列表 hover 效果 */
-.extensions-list>.monaco-list>.monaco-scrollable-element .monaco-list-row {
-  transition: transform 200ms ease;
-}
-.extensions-list>.monaco-list>.monaco-scrollable-element .monaco-list-row:hover {
-  transform: scale(1.02);
+    transition: transform 200ms;
 }
 
 /* ========== 文件树优化版 ========== */
 .explorer-folders-view>.monaco-list>.monaco-scrollable-element {
-  /* 仅保留文件夹折叠时的高度过渡（触发频率极低） */
-  .monaco-list-rows[style*="height"] {
-    transition: height 100ms ease-out;
-  }
 
-  .monaco-list-row {
-    transition: transform 150ms ease;
-    transform-origin: left center;
-  }
+    /* 仅保留文件夹折叠时的高度过渡（触发频率极低） */
+    .monaco-list-rows[style*="height"] {
+        transition: height 100ms ease-out;
+    }
 
-  .monaco-list-row.selected {
-    transform: scale(1.02);
-  }
+    .monaco-list-row {
+        transition: transform 150ms ease;
+        transform-origin: left center;
+    }
 
-  .monaco-list-row.selected span.monaco-icon-name-container::after {
+    .monaco-list-row.selected {
+        transform: scale(1.02);
+    }
+
+    .monaco-list-row.selected span.monaco-icon-name-container::after {
+        content: "🔍";
+        margin-left: 1em;
+        display: inline-block;
+        animation: fileSelectedhandRightInAnimate 0.3s ease;
+    }
+
+    .monaco-list-row:hover span.monaco-icon-name-container::after {
+        content: "👈";
+        margin-left: 1em;
+        display: inline-block;
+        animation: fileSelectedhandRightInAnimate 0.3s ease;
+    }
+
+    .monaco-list-row.focused {
+        transform: none !important;
+        width: 97%;
+    }
+}
+
+@keyframes fileSelectedhandRightInAnimate {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateX(2%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+/* 搜索结果文件树 */
+div.search-view div.monaco-list-row.selected div.monaco-tl-twistie:not(.codicon)::after {
     content: "🔍";
-    margin-left: 1em;
+    margin: 0 1em;
+    font-size: 13px;
     display: inline-block;
     animation: fileSelectedhandRightInAnimate 0.3s ease;
-  }
+}
 
-  .monaco-list-row:hover span.monaco-icon-name-container::after {
+
+
+
+div.quick-input-widget .monaco-list-row.focused .quick-input-list-rows>.quick-input-list-row:first-child .monaco-icon-label-container::after {
     content: "👈";
     margin-left: 1em;
     display: inline-block;
     animation: fileSelectedhandRightInAnimate 0.3s ease;
-  }
-
-  .monaco-list-row.focused {
-    transform: none !important;
-    width: 97%;
-  }
-}
-
-@keyframes fileSelectedhandRightInAnimate {
-  0% {
-    opacity: 0;
-    transform: translateX(50%);
-  }
-  40% {
-    opacity: 1;
-    transform: translateX(2%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-/* 命令面板 */
-div.quick-input-widget {
-  --vscode-quickInput-background: transparent !important;
-  backdrop-filter: blur(12px) brightness(150%);
-  top: 20vh !important;
-  animation: fadeBigIn 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-div.quick-input-widget input[type="text"] {
-  border: none !important;
-}
-
-/* 命令中心动画 */
-div.command-center {
-  animation: fadeIn 0.3s ease;
-}
-
-div.command-center.hide {
-  animation: fadeOut 0.2s ease;
 }
 
 /* 右键菜单动画 */
+/* 一级菜单容器：背景透明 + ::after 毛玻璃层。
+   注意：Menu 构造器会给每一级容器（含子菜单容器）都加上 .monaco-menu-container，
+   必须用 :not(.monaco-submenu) 排除子菜单，否则毛玻璃层会逐层重复生成 */
+/* .monaco-menu-container:not(.monaco-submenu) {
+    background-color: transparent !important;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        display: block;
+        z-index: -1;
+        background-color: transparent;
+        backdrop-filter: blur(10px) brightness(120%) !important;
+    }
+
+    &>.monaco-scrollable-element {
+        overflow: visible !important;
+        background-color: transparent !important;
+    }
+
+    菜单内容层全部透明，毛玻璃统一由容器 ::after / 子菜单容器自身提供
+    .monaco-menu {
+        background-color: transparent !important;
+    }
+} */
+
+/* 二级（及更深）菜单：毛玻璃直接放在子菜单容器自身。
+   子菜单嵌套在父菜单的 stacking context（position:fixed + z-index）内，
+   再用 z-index:-1 的 ::after 嵌套 backdrop-filter 会采样不到背景（表现为纯透明），
+   因此改为容器自身 backdrop-filter + 半透明兜底色，保证任何场景都可读 */
+/* .monaco-submenu.menubar-menu-items-holder {
+    background-color: color-mix(in srgb, var(--vscode-menu-background, #252526) 72%, transparent) !important;
+    backdrop-filter: blur(10px) brightness(120%) !important;
+    border-radius: 6px;
+
+    &>.monaco-scrollable-element {
+        background-color: transparent !important;
+        overflow: visible !important;
+    }
+} */
+
+/* 菜单项装饰（对每一级菜单生效） */
 .monaco-menu-container {
-  div.menubar-menu-items-holder.monaco-menu-container {
-    animation: rightClickMenuFadeBigIn 300ms ease forwards !important;
-  }
+    .monaco-action-bar .action-item {
+        & span.keybinding {
+            padding: 0 2em 0 0;
+        }
+
+        & span.action-label::after {
+            content: "👈";
+            margin-left: 1em;
+            visibility: hidden;
+            display: inline-block;
+            animation: fileSelectedhandRightInAnimate 0.3s ease;
+        }
+
+        &.focused>.action-menu-item>span.action-label::after {
+            visibility: visible;
+        }
+    }
 }
 
-@keyframes rightClickMenuFadeBigIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  40% {
-    opacity: 0.8;
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
-/* 行号高亮 */
-div.active-line-number {
-  --font-color-0: var(--vscode-editorLineNumber-foreground);
-  --font-color-1: #fff;
-  color: var(--font-color-1) !important;
-  transform: scale(1);
-}
 
-/* 代码提示与悬浮框 */
-.overflowingContentWidgets {
-  .editor-widget.suggest-widget {
-    animation: fadeBigIn 100ms ease;
-  }
-
-  .monaco-hover:not(.hidden) {
-    animation: fadeBigIn 0.1s ease;
-  }
-
-  div[widgetid="editor.contrib.resizableContentHoverWidget"] {
-    transition: transform 200ms ease;
-  }
-}
-
-.overflowingOverlayWidgets {
-  .suggest-details {
-    animation: fadeBigIn 100ms ease;
-  }
-}
-
-/* 上下文提示 */
-.context-view.monaco-component.bottom.left[style*="left"],
-.context-view.monaco-component.bottom.left[style*="top"] {
-  animation: fadeBigIn 100ms ease;
-}
-
-/* 通知中心 */
-.notifications-center.visible {
-  animation: fadeBigIn 100ms ease;
-}
-
-/* 编辑器阴影与分割线 */
-div.view-lines.monaco-mouse-cursor-text {
-  box-shadow: 0 0 4px 2px rgb(22, 25, 27);
-}
-
-div.monaco-split-view2.vertical.separator-border {
-  --separator-border: #495495;
-}
 
 /* 光标样式（优化版：保留渐变，移除模糊，降低动画频率） */
-div.cursor.monaco-mouse-cursor-text {
-  width: 3px !important;
+/* div.cursor.monaco-mouse-cursor-text {
+    width: 3px !important;
 }
 
 div.cursor {
-  animation: 120s linear infinite alternate bp-animation;
-  background: linear-gradient(
-    #ff0000,
-    #ff7f00,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0000ff,
-    #8b00ff
-  );
-  background-size: 100% 1000%;
-  border-radius: 2px;
-  will-change: background-position;
+    animation: 120s linear infinite alternate bp-animation;
+    background: linear-gradient(#ff0000,
+            #ff7f00,
+            #ffff00,
+            #00ff00,
+            #00ffff,
+            #0000ff,
+            #8b00ff);
+    background-size: 100% 1000%;
+    border-radius: 2px;
+    will-change: background-position;
 }
 
 @keyframes bp-animation {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 1000%;
-  }
-}
+    0% {
+        background-position: 0 0;
+    }
 
-/* 通用动画 */
-@keyframes topIn {
-  0% {
-    transform: translateY(-200px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+    100% {
+        background-position: 0 1000%;
+    }
+} */
 
-@keyframes fadeBigIn {
-  0% {
-    opacity: 0;
-    transform: scale(90%);
-  }
-  40% {
-    opacity: 1;
-    transform: scale(105%);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(100%);
-  }
-}
+.monaco-editor .suggest-widget,
+.monaco-editor .suggest-details {
+    --vscode-editorSuggestWidget-background: transparent !important;
 
-@keyframes hoverFadeBigIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  40% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    /* &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background-color: transparent;
+        border-radius: var(--vscode-cornerRadius-large);
+        backdrop-filter: blur(10px) brightness(120%) !important;
+    } */
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+    .monaco-highlighted-label::after {
+        content: "👈";
+        margin-left: 1em;
+        visibility: hidden;
+        display: inline-block;
+        animation: fileSelectedhandRightInAnimate 0.3s ease;
+    }
+
+    .monaco-list-row.focused .monaco-highlighted-label::after {
+        visibility: visible;
+    }
+
+
+    /* .monaco-list-row .contents {
+        transition: transform 200ms ease;
+    }
+
+    .monaco-list-row.focused .contents {
+        transform: translateX(10px);
+    } */
 }
